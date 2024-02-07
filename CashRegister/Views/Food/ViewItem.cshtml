@@ -1,0 +1,26 @@
+﻿@model Food
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+
+        <tr>
+            <td>@Model.MenuItemID</td>
+            <td>@Model.Name</td>
+            <td>@Model.Description</td>
+            <td>$@Model.Price</td>
+            <td>@Model.CategoryID</td>
+        </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Food/ModifyItem/@Model.MenuItemID">Modify this Product</a>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OrderItem>
+
+<h2 class="title">Order #@Model.FirstOrDefault().OrderID</h2>
+
+<table class="table">
+    <tr>
+        <th>Order</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+    </tr>
+
+        @foreach(var item in @Model)
+        {
+            <tr>
+        <td>@item.MenuItemID</td>
+        <td>@(@item.Subtotal / @item.Quantity)</td>
+        <td>@item.Quantity</td>
+        <td>$@item.Subtotal</td>
+            </tr>
+        }
+
+</table>
+
+</table>
+<table class="tableTotal">
+    <tr>
+        <th># of Articles</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td class="total">@Model.LastOrDefault().AmountofItems</td>
+        <td class="total">$@Model.LastOrDefault().TotalSelected</td>
+    </tr>
+
+</table>

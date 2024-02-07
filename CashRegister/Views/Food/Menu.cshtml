@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Food>
+
+<h2 class="title">Menu</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+
+    @foreach (var food in @Model)
+    {
+        <tr>
+            <td><a href=/Food/ViewItem/@food.MenuItemID>@food.MenuItemID</a></td>
+            <td>@food.Name</td>
+            <td>@food.Description</td>
+            <td>$@food.Price</td>
+            <td>@food.CategoryID</td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Stats>
+
+<h2 class="title">Stats</h2>
+
+@using (Html.BeginForm("Index", "Stats", "Post"))
+{
+    <div class="form-group">
+        <label for="">Select a Month</label>
+        <select class="form-control" name="OrderDateMonth" id="orderDateMonth" value="">
+            <option value="0">All Sales</option>
+            <option value="1">January </option>
+            <option value="2">February </option>
+            <option value="3">March </option>
+            <option value="4">April </option>
+            <option value="5">May </option>
+            <option value="6">June </option>
+            <option value="7">July </option>
+            <option value="8">August </option>
+            <option value="9">September </option>
+            <option value="10">October </option>
+            <option value="11">November </option>
+            <option value="12">December </option>
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Update" class="btn btn-primary" />
+}
+<br />
+
+<h2>Sales of @Model.FirstOrDefault().Period</h2>
+<table class="table">
+    <tr>
+        <th>Period</th>
+        <th class="center">Gross Sales</th>
+        <th class="center">Taxes</th>
+        <th class="right">Net Sales</th>
+    </tr>
+
+    <tr>
+        <td>@Model.FirstOrDefault().Period</td>
+        <td class="center">$@Model.FirstOrDefault().TotalOfMonth</td>
+        <td class="center">$@Model.FirstOrDefault().Taxes.ToString("F2")</td>
+        <td class="right">$@((Model.FirstOrDefault().TotalOfMonth - Model.FirstOrDefault().Taxes).ToString("F2"))</td>
+    </tr>
+
+
+</table>
+
+<h2>Top 3 Menu Items</h2>
+
+<table class="table">
+    <tr>
+        <th>Food</th>
+        <th class="center">Quantity</th>
+        <th class="right">Total</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.MenuName != null)
+        {
+            <tr>
+                <td>@item.MenuName</td>
+                <td class="center">@item.MenuQuantity</td>
+                <td class="right">$@item.MenuTotal</td>
+            </tr>
+        }
+    }
+</table>
+
+<h2>Best Client</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th class="right">Total</th>
+    </tr>
+    <tr>
+        <td>@Model.LastOrDefault().ClientName</td>
+        <td class="right">$@Model.LastOrDefault().ClientTotal</td>
+    </tr>
+
+</table>

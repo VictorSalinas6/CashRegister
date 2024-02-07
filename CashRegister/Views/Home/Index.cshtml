@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to your Chash Register App!</h1>
+    <p>Please click one of the images or the options above to start to view your information</p>
+</div>
+
+<div>
+    <a asp-area="" asp-controller="Food" asp-action="Menu" class="image1"><img id="Menu" src="../Images/menu.jpg" alt="Menu" /></a>
+    <a asp-area="" asp-controller="Order" asp-action="Index" class="image2"><img id="Order" src="../Images/sales2.jpg" alt="Order" /></a>
+    <a asp-area="" asp-controller="Stats" asp-action="Index" class="image3"><img id="Stats" src="../Images/stats.jpg" alt="Stats" /></a>
+</div>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Order>
+
+<h2 class="title">Sales</h2>
+
+@using (Html.BeginForm("Index", "Order", "Post"))
+{
+<div class="form-group">
+    <label for="">Select a Month</label>
+    <select class="form-control" name="OrderDateMonth" id="orderDateMonth" value="">
+        <option value="0">All Sales</option>
+        <option value="1">January </option>
+        <option value="2">February </option>
+        <option value="3">March </option>
+        <option value="4">April </option>
+        <option value="5">May </option>
+        <option value="6">June </option>
+        <option value="7">July </option>
+        <option value="8">August </option>
+        <option value="9">September </option>
+        <option value="10">October </option>
+        <option value="11">November </option>
+        <option value="12">December </option>
+    </select>
+</div>
+<br />
+    <input type="submit" value="Update" class="btn btn-primary" />
+}
+
+<br />
+<table class="table">
+    <tr>
+        <th>Order</th>
+        <th class ="center">Customer ID</th>
+        <th class="center">Customer Name</th>
+        <th class="center">Date</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (var order in @Model)
+    {
+        <tr>
+            <td><a href=/Order/ViewItems/@order.OrderID>@order.OrderID</a></td>
+            <td class="center">@order.CustomerID</td>
+            <td class="center">@order.CustomerName</td>
+            <td class="center">@order.OrderDate</td>
+            <td>$@order.TotalAmount</td>
+        </tr>
+    }
+
+</table>
+
+<h1 class="big">Total Sales</h1>
+
+    <table class="tableTotal">
+        <tr>
+            <th># Sales</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+        <td class="total">@Model.Count()</td>
+        <td class="total">$@Model.LastOrDefault().TotalSelected</td>
+    </tr>
+
+    </table>

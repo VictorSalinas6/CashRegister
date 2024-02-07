@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister", "CashRegister\CashRegister.csproj", "{37E8392F-CB92-4FC3-A3B9-3BB9000B3DCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37E8392F-CB92-4FC3-A3B9-3BB9000B3DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E8392F-CB92-4FC3-A3B9-3BB9000B3DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E8392F-CB92-4FC3-A3B9-3BB9000B3DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E8392F-CB92-4FC3-A3B9-3BB9000B3DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {573D418A-C41B-4725-AA42-04BA9778699A}
+	EndGlobalSection
+EndGlobal
